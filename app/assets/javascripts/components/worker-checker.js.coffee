@@ -9,7 +9,7 @@ $ ->
           '?since_id=' + sinceId
         else
           ''
-      $.getJSON "/worker_status" + query, (json) ->
+      $.getJSON "worker_status" + query, (json) ->
         for method in ['pending', 'awaiting_retry', 'recent_failures']
           count = json[method]
           elem = $(".job-indicator[role=#{method}]")

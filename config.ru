@@ -2,4 +2,6 @@
 
 require_relative 'config/environment'
 
-run Huginn::Application
+map Huginn::Application.config.relative_url_root || "/" do
+  run Huginn::Application
+end
